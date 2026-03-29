@@ -4,288 +4,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2e5fea" />
-    <meta name="msapplication-navbutton-color" content="#2e5fea" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#2e5fea" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-navbutton-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff" />
     <title>Subhendu Kumar</title>
     <link rel="shortcut icon"
         href="https://raw.githubusercontent.com/Subhendu-Kumar/portfolio/refs/heads/main/public/logo1.png"
         type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com">
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out infinite 2s',
-                        'float-delayed-2': 'float 6s ease-in-out infinite 4s',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'bounce-slow': 'bounce 3s infinite',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&display=swap');
 
         * {
             font-family: 'Inter', sans-serif;
         }
 
-        /* Glassmorphism effect */
-        .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        body {
+            animation: fadeIn 0.6s ease both;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.2);
-            transition: all 0.3s ease;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.4);
-            transform: translateY(-5px);
+        /* Profile card */
+        .profile-card {
+            background: #ffffff;
+            border: 1px solid #e4e4e7;
+            box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04);
+            border-radius: 1.5rem;
+            padding: 2rem;
         }
 
-        .glass-btn {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
+        /* Photo ring gradient */
+        .photo-ring {
+            background: linear-gradient(135deg, #09090b 0%, #52525b 50%, #a1a1aa 100%);
+            padding: 3px;
+            border-radius: 9999px;
         }
 
-        .glass-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.05);
+        .photo-inner {
+            background: #f4f4f5;
+            border-radius: 9999px;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
         }
 
-        /* Float animation */
-        @keyframes float {
+        /* Role badge */
+        .role-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 14px;
+            border-radius: 9999px;
+            background: #09090b;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 9999px;
+            background: #4ade80;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
 
             0%,
             100% {
-                transform: translateY(0px) rotate(0deg);
+                opacity: 1;
+                transform: scale(1);
             }
 
             50% {
-                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.5;
+                transform: scale(0.7);
             }
         }
 
-        /* Gradient text animation */
-        .gradient-text {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
-            background-size: 300% 300%;
-            animation: gradient 3s ease infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        /* Link cards */
+        .glass-card {
+            background: #ffffff;
+            border: 1px solid #e4e4e7;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05);
+            transition: transform 0.22s cubic-bezier(.4, 0, .2, 1), box-shadow 0.22s cubic-bezier(.4, 0, .2, 1), border-color 0.22s;
         }
 
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
+        .glass-card:hover {
+            border-color: #d4d4d8;
+            box-shadow: 0 8px 28px 0 rgba(0, 0, 0, 0.10);
+            transform: translateY(-4px);
+        }
 
-            50% {
-                background-position: 100% 50%;
-            }
+        /* Buttons */
+        .glass-btn {
+            background: #09090b;
+            color: #ffffff;
+            border: 1px solid #09090b;
+            transition: background 0.18s, box-shadow 0.18s;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+        }
 
+        .glass-btn:hover {
+            background: #27272a;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        /* Icon box */
+        .icon-box {
+            background: #f4f4f5;
+            border: 1px solid #e4e4e7;
+            border-radius: 0.75rem;
+            padding: 0.5rem;
+            width: fit-content;
+            transition: background 0.18s;
+        }
+
+        .glass-card:hover .icon-box {
+            background: #ececed;
+        }
+
+        /* Sparkle dots */
+        .sparkle-dot {
+            position: fixed;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+            z-index: 1;
+            animation: twinkle var(--dur, 3s) ease-in-out infinite var(--delay, 0s);
+        }
+
+        @keyframes twinkle {
+
+            0%,
             100% {
-                background-position: 0% 50%;
+                opacity: 0;
+                transform: scale(0.3);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
             }
         }
     </style>
 </head>
 
-<body class="m-0 min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-800 relative overflow-x-hidden">
-    <!-- Floating particles -->
-    <div class="fixed inset-0 pointer-events-none z-0">
-        <div class="absolute top-[10%] left-[20%] w-1 h-1 bg-white/20 rounded-full animate-float"></div>
-        <div class="absolute top-[20%] left-[60%] w-1.5 h-1.5 bg-white/30 rounded-full animate-float-delayed"></div>
-        <div class="absolute top-[60%] left-[10%] w-0.5 h-0.5 bg-white/25 rounded-full animate-float-delayed-2"></div>
-        <div class="absolute top-[80%] left-[80%] w-1 h-1 bg-white/20 rounded-full animate-float"></div>
-        <div class="absolute top-[30%] left-[90%] w-1 h-1 bg-white/15 rounded-full animate-float-delayed"></div>
-        <div class="absolute top-[70%] left-[30%] w-2 h-2 bg-white/10 rounded-full animate-bounce-slow"></div>
+<body class="m-0 min-h-screen bg-[#fafafa] relative overflow-x-hidden">
+
+    <!-- Grid background -->
+    <div class="fixed inset-0 pointer-events-none z-0"
+        style="background-image: linear-gradient(rgba(0,0,0,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.035) 1px, transparent 1px); background-size: 40px 40px;">
+    </div>
+    <!-- Radial bloom accents -->
+    <div class="fixed pointer-events-none z-0"
+        style="top:-120px;left:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(0,0,0,0.04) 0%,transparent 70%);">
+    </div>
+    <div class="fixed pointer-events-none z-0"
+        style="bottom:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(0,0,0,0.04) 0%,transparent 70%);">
     </div>
 
     <!-- Main content -->
     <div
-        class="relative z-10 py-16 lg:px-10 px-4 flex lg:flex-row flex-col items-center justify-center lg:h-screen min-h-screen w-full">
+        class="relative z-10 py-16 lg:px-10 px-4 flex lg:flex-row flex-col items-center justify-center lg:h-screen min-h-screen w-full gap-10">
+
         <!-- Profile Section -->
-        <div class="lg:w-1/3 w-full h-full flex flex-col items-center justify-start gap-2">
-            <div class="glass p-6 rounded-2xl">
-                <!-- Profile Image -->
-                <div class="relative mb-6">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full blur-lg opacity-30 animate-pulse-slow">
-                    </div>
-                    <div class="relative w-64 h-64 rounded-full bg-gradient-to-br from-white/20 to-white/5 p-1">
-                        <img src="https://res.cloudinary.com/dzifzjy5a/image/upload/v1741926835/images/xb7vxpjx6rgmaapjpz8f.png"
-                            alt="Subhendu Kumar"
-                            class="w-full h-full rounded-full object-center object-cover border-2 border-white/20">
+        <div class="lg:w-1/3 w-full h-full flex flex-col items-center justify-center">
+            <div class="profile-card w-full max-w-sm lg:h-[576px] flex flex-col justify-between">
+
+                <!-- Badge top-right -->
+                <div class="flex justify-center lg:justify-end pb-4">
+                    <span class="role-badge">
+                        <span class="badge-dot"></span>
+                        Software Engineer
+                    </span>
+                </div>
+
+                <!-- Photo -->
+                <div class="flex justify-center">
+                    <div class="photo-ring w-36 h-36 md:w-48 md:h-48 lg:w-64 lg:h-64">
+                        <div class="photo-inner w-full h-full">
+                            <img src="https://res.cloudinary.com/dzifzjy5a/image/upload/v1741926835/images/xb7vxpjx6rgmaapjpz8f.png"
+                                alt="Subhendu Kumar" class="w-full h-full object-cover object-center">
+                        </div>
                     </div>
                 </div>
 
+                <!-- Info -->
                 <div class="text-center space-y-3">
-                    <h1 class="lg:text-4xl text-3xl font-bold text-white gradient-text">
-                        Subhendu Kumar
-                    </h1>
-                    <p class="text-lg font-semibold text-white/90 hidden md:block">
-                        Building Scalable and Efficient Applications
-                    </p>
-                    <p class="text-sm text-center font-medium text-white/80 leading-relaxed">
-                        Full-Stack Developer, Problem Solver, and Technology Enthusiast. Passionate about crafting
-                        seamless user experiences and robust backend systems.
+                    <h1 class="text-3xl lg:text-4xl font-bold tracking-tight text-[#09090b]">Subhendu Kumar</h1>
+                    <p class="text-sm font-medium text-zinc-400 leading-relaxed">
+                        Specializing in Computer Vision, Deep Learning, and Neural Network architectures.
+                        Building intelligent systems that see, understand, and reason — backed by full-stack
+                        engineering to bring models to production.
                     </p>
                 </div>
             </div>
         </div>
 
         <!-- Cards Section -->
-        <div class="lg:w-2/3 w-full lg:px-10 md:px-6 px-4 h-full flex flex-col items-start justify-start lg:mt-0 mt-10">
-            <div class="w-full grid lg:grid-cols-4 grid-cols-1 md:grid-cols-3 gap-6 lg:grid-rows-3 lg:h-[576px]">
-
-                <!-- GitHub Card (Large) -->
-                <a href="https://github.com/Subhendu-Kumar" target="_blank"
-                    class="glass-card col-span-2 lg:p-6 md:p-4 p-4 row-span-2 rounded-xl cursor-pointer flex flex-col lg:justify-between justify-start gap-4 group">
-                    <div class="w-full h-auto flex items-center justify-between">
-                        <div class="p-2 bg-white/10 rounded-lg border border-white/20">
-                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </div>
-                        <button class="glass-btn px-4 py-2 text-white font-semibold text-sm rounded-lg">
-                            Follow
-                        </button>
-                    </div>
-                    <div
-                        class="w-full aspect-[16/10] bg-gradient-to-br from-green-400/20 to-blue-500/20 overflow-hidden rounded-lg border border-white/10">
-                        <img src="https://res.cloudinary.com/dzifzjy5a/image/upload/v1741926730/images/uq93naaddkduhtlzylrv.png"
-                            alt="GitHub Preview"
-                            class="w-full h-full object-center object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                </a>
-
-                <!-- Twitter Card -->
-                <a href="https://twitter.com/subhendu_330" target="_blank"
-                    class="glass-card w-full lg:p-6 md:p-4 p-4 hidden rounded-xl cursor-pointer lg:flex flex-col justify-between group">
-                    <div class="p-2 bg-white/10 rounded-lg border border-white/20 w-fit">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                        </svg>
-                    </div>
-                    <p class="text-white font-medium">Twitter</p>
-                    <button class="glass-btn px-4 py-2 text-white font-semibold text-sm rounded-lg">
-                        Follow
-                    </button>
-                </a>
-
-                <!-- LinkedIn Card -->
-                <a href="https://www.linkedin.com/in/subhendu-kumar-dutta" target="_blank"
-                    class="glass-card w-full lg:p-6 md:p-4 p-4 hidden rounded-xl cursor-pointer lg:flex flex-col justify-between group">
-                    <div class="p-2 bg-white/10 rounded-lg border border-white/20 w-fit">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                    </div>
-                    <p class="text-white font-medium">LinkedIn</p>
-                    <button class="glass-btn px-4 py-2 text-white font-semibold text-sm rounded-lg">
-                        Follow
-                    </button>
-                </a>
-
-                <!-- Mobile Twitter Card -->
-                <a href="https://twitter.com/subhendu_330" target="_blank"
-                    class="glass-card w-full md:p-4 col-span-2 md:col-span-1 lg:hidden block lg:p-6 p-4 rounded-xl cursor-pointer flex flex-col justify-between group">
-                    <div class="p-2 bg-white/10 rounded-lg border border-white/20 w-fit">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                        </svg>
-                    </div>
-                    <p class="text-white font-medium">Twitter</p>
-                    <button class="glass-btn px-4 py-2 text-white font-semibold text-sm rounded-lg">
-                        Follow
-                    </button>
-                </a>
-
-                <!-- Mobile LinkedIn Card -->
-                <a href="https://www.linkedin.com/in/subhendu-kumar-dutta" target="_blank"
-                    class="glass-card w-full md:p-4 col-span-2 md:col-span-1 lg:hidden block lg:p-6 p-4 rounded-xl cursor-pointer flex flex-col justify-between group">
-                    <div class="p-2 bg-white/10 rounded-lg border border-white/20 w-fit">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                    </div>
-                    <p class="text-white font-medium">LinkedIn</p>
-                    <button class="glass-btn px-4 py-2 text-white font-semibold text-sm rounded-lg">
-                        Follow
-                    </button>
-                </a>
-
-                <!-- Portfolio Card -->
-                <a href="/portfolio"
-                    class="glass-card w-full lg:p-6 md:p-4 p-4 col-span-2 lg:col-span-2 md:col-span-1 rounded-xl cursor-pointer flex flex-col justify-between group">
-                    <div class="p-2 bg-white/10 rounded-lg border border-white/20 w-fit">
-                        <img src="https://raw.githubusercontent.com/Subhendu-Kumar/portfolio/refs/heads/main/public/logo1.png"
-                            alt="Portfolio" height="40" width="40" class="w-10 h-10" />
-                    </div>
-                    <p class="text-white font-medium">Portfolio</p>
-                    <button class="glass-btn px-4 py-2 text-white font-semibold text-sm rounded-lg">
-                        Visit
-                    </button>
-                </a>
-
-                <!-- Resume Card -->
-                <a href="https://drive.google.com/file/d/1kqIpb0s8rTbZfbiF4RUZABcPNPBpDkzG/view?usp=sharing"
-                    target="_blank"
-                    class="glass-card w-full lg:p-6 md:p-4 p-4 col-span-2 rounded-xl cursor-pointer flex flex-col justify-between group">
-                    <div class="p-2 bg-white/10 rounded-lg border border-white/20 w-fit">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                        </svg>
-                    </div>
-                    <p class="text-white font-medium">Resume</p>
-                    <button class="glass-btn px-4 py-2 text-white font-semibold text-sm rounded-lg">
-                        View
-                    </button>
-                </a>
-
-                <!-- Email Card -->
-                <a href="mailto:subhendukumardutta330@gmail.com" target="_blank"
-                    class="glass-card w-full lg:p-6 md:p-4 p-4 lg:col-span-2 col-span-2 md:col-span-3 rounded-xl cursor-pointer flex flex-col justify-between group">
-                    <div class="p-2 bg-white/10 rounded-lg border border-white/20 w-fit">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
-                        </svg>
-                    </div>
-                    <p class="text-white font-medium">Email</p>
-                    <button class="glass-btn px-4 py-2 text-white font-semibold text-sm rounded-lg">
-                        Connect
-                    </button>
-                </a>
-            </div>
+        <div class="lg:w-2/3 w-full h-full flex flex-col items-start justify-center">
+            <div id="card-grid"
+                class="w-full grid lg:grid-cols-4 grid-cols-2 md:grid-cols-3 gap-5 lg:grid-rows-3 lg:h-[576px]"></div>
         </div>
     </div>
+
+    <script>
+        const ICON = {
+            github: `<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>`,
+            twitter: `<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>`,
+            linkedin: `<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>`,
+            resume: `<path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>`,
+            email: `<path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>`,
+        };
+
+        const cards = [
+            {
+                href: "https://github.com/Subhendu-Kumar",
+                target: "_blank",
+                span: "col-span-2 row-span-2",
+                extra: "lg:justify-between justify-start gap-4",
+                icon: ICON.github,
+                button: "Follow",
+                preview: "https://res.cloudinary.com/dzifzjy5a/image/upload/v1741926730/images/uq93naaddkduhtlzylrv.png",
+            },
+            {
+                href: "https://twitter.com/subhendu_330",
+                target: "_blank",
+                icon: ICON.twitter,
+                label: "Twitter",
+                button: "Follow",
+            },
+            {
+                href: "https://www.linkedin.com/in/subhendu-kumar-dutta",
+                target: "_blank",
+                icon: ICON.linkedin,
+                label: "LinkedIn",
+                button: "Follow",
+            },
+            {
+                href: "/portfolio",
+                span: "col-span-2",
+                iconImg: "https://raw.githubusercontent.com/Subhendu-Kumar/portfolio/refs/heads/main/public/logo1.png",
+                label: "Portfolio",
+                button: "Visit",
+            },
+            {
+                href: "https://drive.google.com/file/d/1kqIpb0s8rTbZfbiF4RUZABcPNPBpDkzG/view?usp=sharing",
+                target: "_blank",
+                span: "col-span-2",
+                icon: ICON.resume,
+                label: "Resume",
+                button: "View",
+            },
+            {
+                href: "mailto:subhendukumardutta330@gmail.com",
+                target: "_blank",
+                span: "col-span-2 md:col-span-3 lg:col-span-2",
+                icon: ICON.email,
+                label: "Email",
+                button: "Connect",
+            },
+        ];
+
+        function renderIcon(card) {
+            if (card.iconImg) {
+                return `<img src="${card.iconImg}" alt="${card.label}" class="w-10 h-10" width="40" height="40" />`;
+            }
+            return `<svg class="w-10 h-10 text-zinc-600" fill="currentColor" viewBox="0 0 24 24">${card.icon}</svg>`;
+        }
+
+        function renderCard(card) {
+            const spanClass = card.span ?? "";
+            const extraClass = card.extra ?? "";
+            const target = card.target ? `target="${card.target}" rel="noopener noreferrer"` : "";
+
+            const iconBox = `<div class="icon-box">${renderIcon(card)}</div>`;
+            const btn = `<button class="glass-btn px-4 py-2 font-semibold text-sm rounded-lg">${card.button}</button>`;
+
+            let inner;
+            if (card.preview) {
+                inner = `
+                    <div class="w-full h-auto flex items-center justify-between">
+                        ${iconBox}
+                        ${btn}
+                    </div>
+                    <div class="w-full aspect-[16/10] bg-[#f4f4f5] overflow-hidden rounded-xl border border-[#e4e4e7]">
+                        <img src="${card.preview}" alt="GitHub Preview"
+                            class="w-full h-full object-center object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>`;
+            } else {
+                inner = `${iconBox}<p class="text-zinc-700 font-semibold text-sm tracking-tight">${card.label}</p>${btn}`;
+            }
+
+            return `<a href="${card.href}" ${target}
+                class="glass-card ${spanClass} p-4 lg:p-5 rounded-2xl cursor-pointer flex flex-col justify-between ${extraClass} group">
+                ${inner}
+            </a>`;
+        }
+
+        document.getElementById("card-grid").innerHTML = cards.map(renderCard).join("");
+
+        // Sparkle dots
+        (function () {
+            const count = 55;
+            const sizes = [2, 2, 3, 3, 4];
+            for (let i = 0; i < count; i++) {
+                const dot = document.createElement("div");
+                dot.className = "sparkle-dot";
+                const size = sizes[Math.floor(Math.random() * sizes.length)];
+                dot.style.cssText = [
+                    `width:${size}px`, `height:${size}px`,
+                    `top:${(Math.random() * 100).toFixed(2)}%`,
+                    `left:${(Math.random() * 100).toFixed(2)}%`,
+                    `--dur:${(2.5 + Math.random() * 4).toFixed(2)}s`,
+                    `--delay:-${(Math.random() * 5).toFixed(2)}s`,
+                ].join(";");
+                document.body.appendChild(dot);
+            }
+        })();
+    </script>
 </body>
 
 </html>
