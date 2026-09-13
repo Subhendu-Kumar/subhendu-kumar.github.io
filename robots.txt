@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://subhendu-kumar.github.io/sitemap.xml

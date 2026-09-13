@@ -6,20 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff" />
     <meta name="msapplication-navbutton-color" content="#ffffff" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff" />
-    <title>Subhendu Kumar</title>
-    <link rel="shortcut icon"
-        href="https://raw.githubusercontent.com/Subhendu-Kumar/portfolio/refs/heads/main/public/logo1.png"
-        type="image/x-icon">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- Primary SEO -->
+    <title>Subhendu Kumar Dutta | Software Engineer – Computer Vision &amp; Deep Learning</title>
+    <meta name="description"
+        content="Subhendu Kumar Dutta (Subhendu Kumar) is a Software Engineer specializing in Computer Vision, Deep Learning and Neural Networks, with full-stack engineering to bring models to production. GitHub, LinkedIn, Twitter, portfolio and resume.">
+    <meta name="author" content="Subhendu Kumar Dutta">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://subhendu-kumar.github.io/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Subhendu Kumar Dutta">
+    <meta property="og:title" content="Subhendu Kumar Dutta | Software Engineer">
+    <meta property="og:description"
+        content="Software Engineer specializing in Computer Vision, Deep Learning and Neural Networks.">
+    <meta property="og:url" content="https://subhendu-kumar.github.io/">
+    <meta property="og:image"
+        content="https://res.cloudinary.com/dzifzjy5a/image/upload/v1741926835/images/xb7vxpjx6rgmaapjpz8f.png">
+    <meta property="og:image:alt" content="Subhendu Kumar Dutta">
+    <meta property="profile:first_name" content="Subhendu">
+    <meta property="profile:last_name" content="Dutta">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@subhendu_330">
+    <meta name="twitter:creator" content="@subhendu_330">
+    <meta name="twitter:title" content="Subhendu Kumar Dutta | Software Engineer">
+    <meta name="twitter:description"
+        content="Software Engineer specializing in Computer Vision, Deep Learning and Neural Networks.">
+    <meta name="twitter:image"
+        content="https://res.cloudinary.com/dzifzjy5a/image/upload/v1741926835/images/xb7vxpjx6rgmaapjpz8f.png">
+
+    <!-- Structured data: tells search engines this page is about the person "Subhendu Kumar Dutta" -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": "https://subhendu-kumar.github.io/",
+        "name": "Subhendu Kumar Dutta",
+        "mainEntity": {
+            "@type": "Person",
+            "@id": "https://subhendu-kumar.github.io/#person",
+            "name": "Subhendu Kumar Dutta",
+            "alternateName": ["Subhendu Kumar", "Subhendu Dutta"],
+            "givenName": "Subhendu",
+            "familyName": "Dutta",
+            "jobTitle": "Software Engineer",
+            "description": "Software Engineer specializing in Computer Vision, Deep Learning and Neural Network architectures, with full-stack engineering to bring models to production.",
+            "url": "https://subhendu-kumar.github.io/",
+            "image": "https://res.cloudinary.com/dzifzjy5a/image/upload/v1741926835/images/xb7vxpjx6rgmaapjpz8f.png",
+            "email": "mailto:subhendukumardutta330@gmail.com",
+            "knowsAbout": ["Computer Vision", "Deep Learning", "Neural Networks", "Machine Learning", "Full-Stack Development"],
+            "sameAs": [
+                "https://github.com/Subhendu-Kumar",
+                "https://www.linkedin.com/in/subhendu-kumar-dutta",
+                "https://twitter.com/subhendu_330",
+                "https://x.com/subhendu_330",
+                "https://subhendu-kumar.github.io/portfolio/"
+            ]
+        }
+    }
+    </script>
+
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/Subhendu-Kumar/portfolio/refs/heads/main/public/logo1.png">
+    <link rel="apple-touch-icon"
+        href="https://raw.githubusercontent.com/Subhendu-Kumar/portfolio/refs/heads/main/public/logo1.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&display=swap');
-
         * {
             font-family: 'Inter', sans-serif;
         }
 
-        body {
+        /* Animate the content wrapper, not body: a transform on body breaks position:fixed children */
+        .page-content {
             animation: fadeIn 0.6s ease both;
         }
 
@@ -42,6 +110,12 @@
             box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04);
             border-radius: 1.5rem;
             padding: 2rem;
+        }
+
+        @media (max-width: 640px) {
+            .profile-card {
+                padding: 1.5rem;
+            }
         }
 
         /* Photo ring gradient */
@@ -164,7 +238,7 @@
     </style>
 </head>
 
-<body class="m-0 h-screen overflow-hidden bg-[#fafafa] relative">
+<body class="m-0 min-h-screen overflow-x-hidden bg-[#fafafa] relative">
 
     <!-- Grid background -->
     <div class="fixed inset-0 pointer-events-none z-0"
@@ -179,15 +253,16 @@
     </div>
 
     <!-- Main content -->
-    <div
-        class="relative z-10 lg:px-10 px-4 flex lg:flex-row flex-col items-center justify-center h-screen w-full gap-10 overflow-hidden">
+    <main
+        class="page-content relative z-10 px-4 md:px-8 lg:px-10 py-8 lg:py-6 flex lg:flex-row flex-col items-center justify-center min-h-screen w-full gap-6 md:gap-8 lg:gap-10">
 
         <!-- Profile Section -->
-        <div class="lg:w-1/3 w-full h-full flex flex-col items-center justify-center">
-            <div class="profile-card w-full max-w-sm lg:h-[576px] flex flex-col justify-between">
+        <div class="lg:w-1/3 w-full flex flex-col items-center justify-center">
+            <div
+                class="profile-card w-full max-w-sm md:max-w-2xl lg:max-w-sm lg:h-[576px] flex flex-col justify-between gap-5 lg:gap-0">
 
                 <!-- Badge top-right -->
-                <div class="flex justify-center lg:justify-end pb-4">
+                <div class="flex justify-center lg:justify-end lg:pb-4">
                     <span class="role-badge">
                         <span class="badge-dot"></span>
                         Software Engineer
@@ -196,17 +271,21 @@
 
                 <!-- Photo -->
                 <div class="flex justify-center">
-                    <div class="photo-ring w-36 h-36 md:w-48 md:h-48 lg:w-64 lg:h-64">
+                    <div class="photo-ring w-36 h-36 md:w-48 md:h-48 xl:w-64 xl:h-64">
                         <div class="photo-inner w-full h-full">
                             <img src="https://res.cloudinary.com/dzifzjy5a/image/upload/v1741926835/images/xb7vxpjx6rgmaapjpz8f.png"
-                                alt="Subhendu Kumar" class="w-full h-full object-cover object-center">
+                                alt="Subhendu Kumar Dutta – Software Engineer" width="256" height="256"
+                                fetchpriority="high" class="w-full h-full object-cover object-center">
                         </div>
                     </div>
                 </div>
 
                 <!-- Info -->
                 <div class="text-center space-y-3">
-                    <h1 class="text-3xl lg:text-4xl font-bold tracking-tight text-[#09090b]">Subhendu Kumar</h1>
+                    <h1
+                        class="text-2xl sm:text-3xl lg:text-[1.35rem] xl:text-3xl text-balance font-bold tracking-tight text-[#09090b]">
+                        Subhendu Kumar Dutta
+                    </h1>
                     <p class="text-sm font-medium text-zinc-400 leading-relaxed">
                         Specializing in Computer Vision, Deep Learning, and Neural Network architectures.
                         Building intelligent systems that see, understand, and reason — backed by full-stack
@@ -217,11 +296,12 @@
         </div>
 
         <!-- Cards Section -->
-        <div class="lg:w-2/3 w-full h-full flex flex-col items-start justify-center">
+        <div class="lg:w-2/3 w-full md:max-w-2xl lg:max-w-none flex flex-col items-start justify-center">
             <div id="card-grid"
-                class="w-full grid lg:grid-cols-4 grid-cols-2 md:grid-cols-3 gap-5 lg:grid-rows-3 lg:h-[576px]"></div>
+                class="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-5 lg:grid-rows-3 lg:h-[576px]">
+            </div>
         </div>
-    </div>
+    </main>
 
     <script>
         const ICON = {
@@ -239,6 +319,7 @@
                 span: "col-span-2 row-span-2",
                 extra: "lg:justify-between justify-start gap-4",
                 icon: ICON.github,
+                label: "GitHub",
                 button: "Follow",
                 preview: "https://res.cloudinary.com/dzifzjy5a/image/upload/v1741926730/images/uq93naaddkduhtlzylrv.png",
             },
@@ -257,8 +338,8 @@
                 button: "Follow",
             },
             {
-                href: "/portfolio",
-                span: "col-span-2",
+                href: "/portfolio/",
+                span: "col-span-2 md:col-span-1 lg:col-span-2",
                 iconImg: "https://res.cloudinary.com/dzifzjy5a/image/upload/v1748333476/songs/34931ac2-b31d-4dba-b3e2-83186b58d250/h9q02jxbtobfmjz5azbh.jpg",
                 label: "Portfolio",
                 button: "Visit",
@@ -266,7 +347,7 @@
             {
                 href: "https://drive.google.com/file/d/1kqIpb0s8rTbZfbiF4RUZABcPNPBpDkzG/view?usp=sharing",
                 target: "_blank",
-                span: "col-span-2",
+                span: "col-span-2 md:col-span-1 lg:col-span-2",
                 icon: ICON.resume,
                 label: "Resume",
                 button: "View",
@@ -274,7 +355,7 @@
             {
                 href: "mailto:subhendukumardutta330@gmail.com",
                 target: "_blank",
-                span: "col-span-2 md:col-span-3 lg:col-span-2",
+                span: "col-span-2 md:col-span-1 lg:col-span-2",
                 icon: ICON.email,
                 label: "Email",
                 button: "Connect",
@@ -294,7 +375,8 @@
             const target = card.target ? `target="${card.target}" rel="noopener noreferrer"` : "";
 
             const iconBox = `<div class="icon-box">${renderIcon(card)}</div>`;
-            const btn = `<button class="glass-btn px-4 py-2 font-semibold text-sm rounded-lg">${card.button}</button>`;
+            // A <button> can't be nested inside <a>, so the button look is a span
+            const btn = `<span class="glass-btn px-4 py-2 font-semibold text-sm text-center rounded-lg">${card.button}</span>`;
 
             let inner;
             if (card.preview) {
@@ -303,16 +385,16 @@
                         ${iconBox}
                         ${btn}
                     </div>
-                    <div class="w-full aspect-[16/10] bg-[#f4f4f5] overflow-hidden rounded-xl border border-[#e4e4e7]">
-                        <img src="${card.preview}" alt="GitHub Preview"
-                            class="w-full h-full object-center object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="w-full aspect-[16/10] lg:aspect-auto lg:flex-1 lg:min-h-0 bg-[#f4f4f5] overflow-hidden rounded-xl border border-[#e4e4e7]">
+                        <img src="${card.preview}" alt="Subhendu Kumar Dutta's GitHub profile" loading="lazy"
+                            class="w-full h-full object-center lg:object-left-top object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>`;
             } else {
                 inner = `${iconBox}<p class="text-zinc-700 font-semibold text-sm tracking-tight">${card.label}</p>${btn}`;
             }
 
-            return `<a href="${card.href}" ${target}
-                class="glass-card ${spanClass} p-4 lg:p-5 rounded-2xl cursor-pointer flex flex-col justify-between ${extraClass} group">
+            return `<a href="${card.href}" ${target} aria-label="Subhendu Kumar Dutta on ${card.label}"
+                class="glass-card ${spanClass} p-4 lg:p-5 rounded-2xl cursor-pointer flex flex-col justify-between gap-3 ${extraClass} group">
                 ${inner}
             </a>`;
         }
